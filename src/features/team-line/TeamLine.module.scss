@@ -1,0 +1,72 @@
+$team-colors: (
+  ari: #97233f,
+  atl: #a71930,
+  bal: #241773,
+  buf: #00338d,
+  car: #0085ca,
+  chi: #0b162a,
+  cin: #fb4f14,
+  cle: #311d00,
+  dal: #041e42,
+  den: #fb4f14,
+  det: #0076b6,
+  gb: #203731,
+  hou: #a71930,
+  ind: #002c5f,
+  jac: #9f792c,
+  kc: #e31837,
+  lac: #0080c6,
+  lar: #003594,
+  mia: #008e97,
+  min: #4f2683,
+  ne: #002244,
+  no: #d3bc8d,
+  nyg: #0b2265,
+  nyj: #125740,
+  oak: #000,
+  phi: #004c54,
+  pit: #ffb612,
+  sf: #aa0000,
+  sea: #69be28,
+  tb: #d50a0a,
+  ten: #4b92db,
+  was: #773141,
+);
+
+@each $team, $color in $team-colors {
+  .#{$team} {
+    text {
+      fill: $color;
+    }
+
+    &.highlighted {
+      circle {
+        fill: $color;
+      }
+      path {
+        stroke: $color;
+        stroke-width: 5;
+      }
+    }
+  }
+}
+
+.team {
+  cursor: pointer;
+
+  path {
+    fill: none;
+    stroke: lightgray;
+    stroke-width: 2;
+  }
+
+  circle {
+    fill: lightgray;
+  }
+
+  text {
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
